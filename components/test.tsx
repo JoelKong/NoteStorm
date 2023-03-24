@@ -49,7 +49,7 @@ export default function Example() {
                 key={item.name}
                 href={item.href}
                 target={item.target}
-                className="text-base font-semibold leading-6 text-gray-900"
+                className="text-base font-semibold leading-6 text-gray-900 hover:text-gray-500"
               >
                 {item.icon && (
                   <span className="inline-block pr-2 align-text-top">
@@ -63,7 +63,7 @@ export default function Example() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a
               href="#"
-              className="text-base font-semibold leading-6 text-gray-900"
+              className="text-base font-semibold leading-6 text-gray-900 hover:text-gray-500"
             >
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
@@ -156,7 +156,10 @@ export default function Example() {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Your Notes Reimagined
+              Your Notes{" "}
+              <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                Reimagined
+              </span>
             </h1>
             <p className="mt-6 text-xl leading-10 text-gray-600">
               Tired of navigating through countless notes? Dont worry!
@@ -171,7 +174,7 @@ export default function Example() {
               </a>
               <a
                 href="#"
-                className="text-sm font-semibold leading-6 text-gray-900"
+                className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-500"
               >
                 Learn more <span aria-hidden="true">→</span>
               </a>
