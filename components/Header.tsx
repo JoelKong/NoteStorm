@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import navigation from "../utils/navigation";
+import { signIn } from "next-auth/react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,7 +52,7 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="#"
+            onClick={() => signIn("google", { callbackUrl: "/home" })}
             className="text-base font-semibold leading-6 text-gray-900 hover:text-gray-500"
           >
             Log in <span aria-hidden="true">&rarr;</span>
@@ -104,8 +105,8 @@ export default function Header() {
               </div>
               <div className="py-5">
                 <a
-                  href="#"
                   className="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold text-gray-900 hover:bg-gray-50"
+                  onClick={() => signIn("google", { callbackUrl: "/home" })}
                 >
                   Log in <span aria-hidden="true">&rarr;</span>
                 </a>
