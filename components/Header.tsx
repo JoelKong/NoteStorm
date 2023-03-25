@@ -53,7 +53,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
             onClick={() => signIn("google", { callbackUrl: "/home" })}
-            className="text-base font-semibold leading-6 text-gray-900 hover:text-gray-500"
+            className="cursor-pointer text-base font-semibold leading-6 text-gray-900 hover:text-gray-500"
           >
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
@@ -105,7 +105,7 @@ export default function Header() {
               </div>
               <div className="py-5">
                 <a
-                  className="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block cursor-pointer rounded-lg py-2 px-3 text-lg font-semibold text-gray-900 hover:bg-gray-50"
                   onClick={() => signIn("google", { callbackUrl: "/home" })}
                 >
                   Log in <span aria-hidden="true">&rarr;</span>
