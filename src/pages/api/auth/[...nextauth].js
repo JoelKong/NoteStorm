@@ -7,7 +7,6 @@ export const authOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackUrl: "http://localhost:3000/api/auth/callback/google",
     }),
   ],
 
@@ -16,11 +15,11 @@ export const authOptions = {
       const client = await MongoClient.connect(process.env.MONGODB_URI);
       const db = client.db();
       const collection = db.collection("user");
-      const userData = await collection.findOne({ id: session.token.sub });
-      if (userData) {
-        session.session.user.currentBalance = userData.currentBalance;
-        session.session.user.id = userData.id;
-      }
+      // const userData = await collection.findOne({ id: session.token.sub });
+      // if (userData) {
+      //   session.session.user.currentBalance = userData.currentBalance;
+      //   session.session.user.id = userData.id;
+      // }
       client.close();
       return session;
     },
@@ -28,10 +27,12 @@ export const authOptions = {
       const client = await MongoClient.connect(process.env.MONGODB_URI);
       const db = client.db();
       const collection = db.collection("user");
-      if (await collection.findOne({ id: user.user.id })) {
-        client.close();
-        return true;
-      }
+      console.log(collection);
+      return true;
+      // if (await collection.findOne({ id: user.user.id })) {
+      //   client.close();
+      //   return true;
+      // }
       // } else {
       //   await collection.updateOne(
       //     { id: user.user.id },
