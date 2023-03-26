@@ -20,7 +20,6 @@ export async function getServerSideProps(context) {
   const session = await getSession({ req: context.req });
   if (session) {
     return {
-      props: { session },
       redirect: { destination: "/home", permanent: false },
     };
   }
